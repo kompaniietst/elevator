@@ -1,1 +1,7 @@
-<p>building works!</p>
+<app-elevator [ngStyle]="{'bottom.px': elevatorPlace}"></app-elevator>
+
+<app-floor class="floor" *ngFor="let floor of floors_amount  | numberToArray | reverse">
+    <div randomColor class="floor-index">{{ floor }}</div>
+    <div class="order-btn" (click)="getDesiredFloor($event, floor); activeFloor = floor"
+        [ngClass]="{'active': floor == activeFloor}"></div>
+</app-floor>

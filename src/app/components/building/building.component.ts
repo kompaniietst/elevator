@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-building',
@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./building.component.scss']
 })
 export class BuildingComponent implements OnInit {
+  @Input('floors')
+  floors_amount!: any;
+  activeFloor: number = 0;
+  elevatorPlace: number = 0;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  getDesiredFloor(floorElement: any, index: number) {
+    this.elevatorPlace = this.calcFloorHeight(floorElement, index);
   }
 
+  calcFloorHeight(currElement: any, index: number) {
+    let floorHeight = currElement.target.parentNode.clientHeight;
+
+    return floorHeight * index;
+  }
 }

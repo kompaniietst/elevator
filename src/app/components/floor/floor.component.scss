@@ -1,0 +1,31 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+    height: 50px;
+    position: relative;
+    height: 50px;
+}
+::ng-deep {
+    .order-btn {
+        width: 18px;
+        height: 18px;
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translate(0, -50%);
+        cursor: pointer;
+        &.active:after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #80deea;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+    }
+}

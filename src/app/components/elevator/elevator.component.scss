@@ -1,0 +1,12 @@
+:host {
+    background: brown;
+    width: 30px;
+    height: 44px;
+    display: block;
+    position: absolute;
+    transition: 0.3s;
+    right: 50%;
+    transform: translate(50%);
+    bottom: 0;
+    z-index: 1;
+}
